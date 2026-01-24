@@ -1,1 +1,13 @@
-print("hola mundo , como estas desde dev?")
+from flask import Flask
+
+def create_app():
+    app = Flask(__name__)
+    @app.route('/')
+    def home():
+        return {'mensaje': 'hola mundo hhhh'}, 400   
+
+    return app
+
+if __name__ == '__main__':
+    app = create_app()
+    app.run(debug=True, host='0.0.0.0', port=5001)
