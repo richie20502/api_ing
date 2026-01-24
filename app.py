@@ -1,7 +1,9 @@
 from flask import Flask
+from controllers.HomeController import blueprint_home
 
 def create_app():
     app = Flask(__name__)
+    app.register_blueprint(blueprint_home)
     @app.route('/')
     def home():
         return {'mensaje': 'hola mundo hhhh'}, 400   
